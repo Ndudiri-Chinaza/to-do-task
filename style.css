@@ -213,7 +213,6 @@
   align-items: start;
   border-bottom: 1px solid var(--borderColor);
   padding: var(--space4);
-  /* position: fixed; */
 }
 
 .home-top {
@@ -524,7 +523,7 @@
 
 @media screen and (max-width: 500px) {
   .content-area {
-  padding: var(--space4) var(--space6);
+  padding: var(--space4) var(--space6) var(--space1) var(--space6);
 }
 
   .health-container {
