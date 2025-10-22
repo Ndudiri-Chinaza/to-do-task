@@ -74,6 +74,16 @@
   --clampVariableH3: clamp(var(--minimumSizeH3), 1vw + 0.8rem, var(--maximumSizeH3));
 }
 
+[dark-theme="dark"] {
+  --dashboardColor: #ffffff;
+  --bodyTextColor1: #121212;
+  --bodyTextColor2: #98a2b3;
+  --borderColor: #f2f4f7;
+  --sidebarHoverColor: #06a1fb;
+  --radioBtnColor: #eaecf0;
+  --settingsColor: #000000;
+}
+
 
 .dashboard {
   width: 100%;
@@ -203,6 +213,7 @@
   align-items: start;
   border-bottom: 1px solid var(--borderColor);
   padding: var(--space4);
+  /* position: fixed; */
 }
 
 .home-top {
@@ -294,6 +305,8 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: start;
+  row-gap: var(--space10);
+  flex-wrap: wrap;
 }
 
 .health-container {
@@ -339,13 +352,13 @@
   height: auto;
 }
 
-.number-health-text p {
+.number {
   font-size: var(--fontSize-large);
   font-weight: var(--fontWeight-Bold);
   color: #121212;
 }
 
-.number-health-text span {
+.well {
   font-size: var(--fontSize-medium);
   font-weight: var(--fontWeight-medium);
   color: hsla(0, 0%, 7%, 0.5);
@@ -472,6 +485,67 @@
   background-color: #ffebfc;
   color: #e002bb;
 }
+
+
+/* Media Query */
+@media screen and (max-width: 1140px) {
+  .health-container {
+  width: 48%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  padding: var(--space11) var(--space9);
+  border-radius: var(--radius7);
+  row-gap: var(--space11);
+}
+  
+}
+
+@media screen and (max-width: 992px) {
+  .sidebar {
+    display: none;
+  }
+
+  .content-area {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  row-gap: var(--space1);
+  padding: var(--space4) var(--space6);
+  overflow: auto;
+}
+  
+}
+
+@media screen and (max-width: 500px) {
+  .content-area {
+  padding: var(--space4) var(--space6);
+}
+
+  .health-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  padding: var(--space11) var(--space9);
+  border-radius: var(--radius7);
+  row-gap: var(--space11);
+}
+
+}
+
+/* @media(prefers-color-scheme: dark) {
+  :root {
+
+  }
+} */
 
 
 
