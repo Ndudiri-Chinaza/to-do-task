@@ -57,12 +57,15 @@
 
   /* Color */
   --dashboardColor: #ffffff;
+  --headingTextColor: #000000;
   --bodyTextColor1: #121212;
   --bodyTextColor2: #98a2b3;
+  --upcomingTextColor: #14171f;
   --borderColor: #f2f4f7;
   --sidebarHoverColor: #06a1fb;
   --radioBtnColor: #eaecf0;
-  --settingsColor: #000000;
+  --menuHoverColor: #ffffff;
+  /* --menuTextColor: #09244b; */
 
   /* Clamp Variables */
   --minimumSizeH1: 1.5rem;
@@ -75,13 +78,15 @@
 }
 
 [dark-theme="dark"] {
-  --dashboardColor: #ffffff;
-  --bodyTextColor1: #121212;
-  --bodyTextColor2: #98a2b3;
+  --dashboardColor: #060606;
+  --headingTextColor: #ffffff;
+  --bodyTextColor1: #ffffff;
+  --bodyTextColor2: #ffffff;
+  --upcomingTextColor: #ffffff;
   --borderColor: #f2f4f7;
   --sidebarHoverColor: #06a1fb;
   --radioBtnColor: #eaecf0;
-  --settingsColor: #000000;
+  --menuHoverColor: #000000;
 }
 
 
@@ -139,15 +144,8 @@
 }
 
 .menu-item-link {
-  text-decoration: none;
-  color: #09244b;
   width: 100%;
-  border-radius: var(--radius5);
-}
-
-.menu-item-link:hover {
-  background-color: var(--sidebarHoverColor);
-  color: var(--dashboardColor);
+  text-decoration: none;
 }
 
 .menu-item {
@@ -159,6 +157,13 @@
   align-items: center;
   column-gap: var(--space1);
   padding: var(--space2);
+  color: var(--bodyTextColor1);
+}
+
+.menu-item:hover {
+  background-color: var(--sidebarHoverColor);
+  color: var(--menuHoverColor);
+  border-radius: var(--radius5);
 }
 
 .menu-icon span {
@@ -181,9 +186,16 @@
 }
 
 .settings-container {
-  width: fit-content;
+  width: 100%;
   height: auto;
   padding: var(--space2);
+  color: var(--bodyTextColor1);
+}
+
+.settings-container:hover {
+  background-color: var(--sidebarHoverColor);
+  color: var(--menuHoverColor);
+  border-radius: var(--radius5);
 }
 
 .settings-container p {
@@ -223,7 +235,7 @@
 .home-top p {
   font-size: var(--fontSize-large);
   font-weight: var(--fontWeight-medium);
-  color: var(--settingsColor);
+  color: var(--headingTextColor);
 }
 
 .notification-container {
@@ -279,7 +291,7 @@
 .today-container h1 {
   font-size: var(--clampVariableH1);
   font-weight: var(--fontWeight-Bold);
-  color: var(--settingsColor);
+  color: var(--headingTextColor);
 }
 
 .dec {
@@ -391,7 +403,7 @@
 }
 
 .upcoming-task h3 {
-  color: #14171f;
+  color: var(--upcomingTextColor);
   font-size: var(--clampVariableH3);
   font-weight: var(--fontWeight-medium);
 }
@@ -486,6 +498,22 @@
 }
 
 
+/* Dark Mode Effect */
+@media(prefers-color-scheme: dark) {
+  :root {
+  --dashboardColor: #060606;
+  --headingTextColor: #ffffff;
+  --bodyTextColor1: #ffffff;
+  --bodyTextColor2: #ffffff;
+  --upcomingTextColor: #ffffff;
+  --borderColor: #f2f4f7;
+  --sidebarHoverColor: #06a1fb;
+  --radioBtnColor: #eaecf0;
+  --menuHoverColor: #000000;
+  }
+}
+
+
 /* Media Query */
 @media screen and (max-width: 1140px) {
   .health-container {
@@ -540,11 +568,6 @@
 
 }
 
-/* @media(prefers-color-scheme: dark) {
-  :root {
-
-  }
-} */
 
 
 
